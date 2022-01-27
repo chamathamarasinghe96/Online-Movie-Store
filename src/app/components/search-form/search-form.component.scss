@@ -1,0 +1,21 @@
+.h1 {
+  text-align: center;
+  padding: 60px 0;
+  background-color: #e8ecef;
+  font-size: large;
+  margin: 40px auto 0 auto;
+}
+
+.form-input {
+  display: block;
+  width: 100%;
+  border: transparent;
+  max-width: 600px;
+  background: var(--clr-white);
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: var(--radius);
+  color: var(--clr-grey-3);
+  letter-spacing: var(--spacing);
+  margin: 40px auto 0 auto;
+}
