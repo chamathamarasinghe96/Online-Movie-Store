@@ -4,7 +4,10 @@
     class="form-input"
     type="text"
     name="search"
+    [(ngModel)]="search"
     placeholder="Batman"
-    (keyup)="onChangeEvent($event)"
   />
+  <button mat-raised-button color="primary" (click)="onClick($event)">
+    Search
+  </button>
 </form>

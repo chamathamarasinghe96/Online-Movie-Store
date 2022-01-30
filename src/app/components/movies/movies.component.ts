@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { SearchFormComponent } from '../search-form/search-form.component';
+import { Component, OnInit, Input } from '@angular/core';
 import { Movie } from '../../Movie';
 
 @Component({
@@ -8,13 +7,11 @@ import { Movie } from '../../Movie';
   styleUrls: ['./movies.component.scss'],
 })
 export class MoviesComponent implements OnInit {
-  movies: Movie[] = [];
+  @Input() movies: Array<Movie> = [];
 
-  constructor(private searchForm: SearchFormComponent) {}
+  constructor() {}
 
   ngOnInit(): void {}
 
-  setSearchedMovies() {
-    this.movies = this.searchForm.movies;
-  }
+  setSearchedMovies() {}
 }
