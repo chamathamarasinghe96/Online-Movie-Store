@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Movie } from '../../Movie';
 import { MovieService } from '../../services/movie.service';
 
@@ -8,10 +7,10 @@ import { MovieService } from '../../services/movie.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
+
 export class HomeComponent implements OnInit {
   searchText: string = '';
   movies: Movie[] = [];
-  MOVIES: Array<Movie> = [];
 
   constructor(private movieService: MovieService) {}
 
@@ -22,11 +21,14 @@ export class HomeComponent implements OnInit {
     this.searchText = search;
     this.movieService
       .getSearchedMovies(this.searchText)
-      .subscribe((MOVIES_LIST) => {
-        const tempMovies: Array<Movie> = [];
-        console.log(MOVIES_LIST.Search);
-        // this.movies = MOVIES_LIST[1];
+      .subscribe((dataArray) => {
+        // const tempMovies: Array<Movie> = [];
+  
         // console.log(typeof this.movies);
+
+        // dataArray.Search.map((a: Movie)=>{
+        //   console.log(a);
+        // })
 
         // this.MOVIES.map((m) => {
         //   const newMovie = {
@@ -42,7 +44,9 @@ export class HomeComponent implements OnInit {
 
         // this.movies = tempMovies;
 
-        console.log(this.movies);
+        console.log(dataArray.Search);
+        this.movies = dataArray.Search;
+
       });
   }
 }
