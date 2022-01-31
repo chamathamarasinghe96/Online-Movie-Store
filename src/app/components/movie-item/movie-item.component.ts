@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from '../../Movie';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-movie-item',
@@ -9,7 +10,11 @@ import { Movie } from '../../Movie';
 export class MovieItemComponent implements OnInit {
   @Input() movie!: Movie;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
+
+  onSingleMovieClick(){
+    this.router.navigate(['/single-movie'])
+  }
 }

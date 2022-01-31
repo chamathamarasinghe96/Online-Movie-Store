@@ -1,6 +1,6 @@
 <div class="movie">
     <article>
-        <img [src]="movie.Poster" [alt]="movie.Title" />
+        <img [src]="movie.Poster" [alt]="movie.Title" routerLink="/single-movie">
         <div class="movie-info">
             <h4 class="title">{{movie.Title}}</h4>
             <p>{{movie.Year}}</p>
