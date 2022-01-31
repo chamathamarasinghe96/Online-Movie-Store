@@ -1,2 +1,9 @@
-<p>movie-item works!</p>
-<!-- <p>{{ movie.title }}</p> -->
+<div class="movie">
+    <article>
+        <img [src]="movie.Poster" [alt]="movie.Title" />
+        <div class="movie-info">
+            <h4 class="title">{{movie.Title}}</h4>
+            <p>{{movie.Year}}</p>
+        </div>
+    </article>
+</div>

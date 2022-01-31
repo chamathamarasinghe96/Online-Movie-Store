@@ -19,3 +19,23 @@
   letter-spacing: var(--spacing);
   margin: 40px auto 0 auto;
 }
+
+.btn {
+  display: inline-block;
+  color: #fff;
+  border: none;
+  max-width: 600px;
+  width: 100%;
+  margin: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: inherit;
+}
+.btn:focus {
+  outline: none;
+}
+.btn:active {
+  transform: scale(0.98);
+}
