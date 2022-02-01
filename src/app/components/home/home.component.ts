@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Movie } from '../../Movie';
 import { MovieService } from '../../services/movie.service';
+import { Router, ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,18 @@ export class HomeComponent implements OnInit {
   searchText: string = '';
   movies: Movie[] = [];
 
-  constructor(private movieService: MovieService) {}
+  constructor(private movieService: MovieService, private route: ActivatedRoute, private router: Router) {
+    this.route.params.subscribe((params)=>{
+      if(params["searchTerm"]){
+        this.onSearchButtonClick(params["searchTerm"]);
+        console.log(params);
+      }
+    })
+  }
+
+  onClick(searchTerm: string){
+    this.router.navigate(['search', searchTerm]);
+  }
 
   ngOnInit(): void {}
 

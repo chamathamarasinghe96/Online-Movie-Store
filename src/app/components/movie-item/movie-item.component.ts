@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from '../../Movie';
 import { Router } from '@angular/router'
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-movie-item',
@@ -9,12 +10,12 @@ import { Router } from '@angular/router'
 })
 export class MovieItemComponent implements OnInit {
   @Input() movie!: Movie;
-
-  constructor(private router: Router) {}
+  @Input() searchText!: string;
+  
+  constructor(private router: Router, private route: ActivatedRoute) {
+    this.route.params.subscribe()
+  }
 
   ngOnInit(): void {}
-
-  onSingleMovieClick(){
-    this.router.navigate(['/single-movie'])
-  }
+  
 }

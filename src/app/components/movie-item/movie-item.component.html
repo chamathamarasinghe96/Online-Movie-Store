@@ -1,6 +1,6 @@
 <div class="movie">
     <article>
-        <img [src]="movie.Poster" [alt]="movie.Title" routerLink="/single-movie">
+        <img [src]="movie.Poster" [alt]="movie.Title" routerLink="/search/{{searchText}}/movie/{{movie.imdbID}}">
         <div class="movie-info">
             <h4 class="title">{{movie.Title}}</h4>
             <p>{{movie.Year}}</p>

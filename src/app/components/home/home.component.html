@@ -1,4 +1,4 @@
 <div>
-  <app-search-form (btnClick)="onSearchButtonClick($event)"></app-search-form>
-  <app-movies [movies]="movies"></app-movies>
+  <app-search-form (btnClick)="onClick($event)"></app-search-form>
+  <app-movies [movies]="movies" [searchText]="searchText"></app-movies>
 </div>

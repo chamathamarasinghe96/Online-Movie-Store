@@ -15,8 +15,12 @@ import { HomeComponent } from './components/home/home.component';
 import { SingleMovieComponent } from './components/single-movie/single-movie.component';
 
 const appRoutes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'single-movie', component: SingleMovieComponent}
+  // {path: '', component: HomeComponent},
+  {path: 'movie/:id', component: SingleMovieComponent},
+  {path: 'search/:searchTerm/movie/:id', component: SingleMovieComponent},
+  {path: 'search', component: HomeComponent},
+  {path: 'search/:searchTerm', component: HomeComponent}
+
 ]
 
 @NgModule({
@@ -35,7 +39,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     MatButtonModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes, {enableTracing: true})
+    RouterModule.forRoot(appRoutes, {enableTracing: false})
   ],
   providers: [],
   bootstrap: [AppComponent],

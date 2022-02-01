@@ -260,6 +260,8 @@ Single Movie
   margin-top: 0.5rem;
   letter-spacing: var(--spacing);
 }
+
+
 @media screen and (min-width: 992px) {
   .single-movie {
     grid-template-columns: 1fr 2fr;

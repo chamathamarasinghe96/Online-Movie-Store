@@ -8,6 +8,7 @@ import { Movie } from '../../Movie';
 })
 export class MoviesComponent implements OnInit {
   @Input() movies: Array<Movie> = [];
+  @Input() searchText!: string;
 
   constructor() {}
 

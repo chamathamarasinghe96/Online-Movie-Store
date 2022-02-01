@@ -1,1 +1,8 @@
-<p>single-movie works!</p>
+<section class="single-movie">
+    <img [src]="movie.Poster" alt="movie.Title" />
+    <div class="single-movie-info">
+        <h2>{{movie.Title}}</h2>
+        <p>{{movie.Plot}}</p>
+        <button class="btn" mat-raised-button color="primary" routerLink="/search/{{searchText}}">Back to movies</button>
+    </div>
+</section>

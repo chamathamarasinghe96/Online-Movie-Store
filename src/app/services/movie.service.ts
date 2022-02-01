@@ -17,4 +17,8 @@ export class MovieService {
   getSearchedMovies(name: string): Observable<any> {
     return this.httpClient.get<any>(`${this.apiURL}&s=${name}`);
   }
+
+  getSelectedSingleMovie(imdbID: string): Observable<any> {
+    return this.httpClient.get(`${this.apiURL}&i=${imdbID}`);
+  }
 }
